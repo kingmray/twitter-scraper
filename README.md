@@ -2,6 +2,9 @@
 
 ![GitHub](https://img.shields.io/github/license/bisguzar/twitter-scraper) ![GitHub contributors](https://img.shields.io/github/contributors/bisguzar/twitter-scraper) ![code size](https://img.shields.io/github/languages/code-size/bisguzar/twitter-scraper) ![maintain status](https://img.shields.io/maintenance/yes/2020)
 
+## Python "Laie"
+Special version for my friend LEO who is a python "Laie" ;)
+
 [🇰🇷 Read Korean Version](https://github.com/bisguzar/twitter-scraper/blob/master/twitter_scraper/__init__.py)
 
 Twitter's API is annoying to work with, and has lots of limitations — luckily their frontend (JavaScript) has it's own API, which I reverse–engineered. No API rate limits. No restrictions. Extremely fast.
