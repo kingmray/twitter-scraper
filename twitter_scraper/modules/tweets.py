@@ -34,7 +34,8 @@ def get_tweets(query, pages=25):
 
     def gen_tweets(pages):
         request = session.get(url + '&max_position', headers=headers)
-
+        print(request.url)
+        tweet_id = 0
         while pages > 0:
             try:
                 json_response = request.json()
@@ -52,8 +53,8 @@ def get_tweets(query, pages=25):
             comma = ","
             dot = "."
             tweets = []
-            print('muh')
-            print(html.find(".timeline-Tweet"))
+            # print('muh')
+            # print(html.find(".timeline-Tweet"))
             try:
                 for tweet in html.find(".timeline-Tweet") or []:  # , html.find(".js-profile-popup-actionable")
                     # 10~11 html elements have `.stream-item` class and also their `data-item-type` is `tweet`
@@ -169,8 +170,11 @@ def get_tweets(query, pages=25):
                 #    )
                     yield tweet
 
-                # request = session.get(url, params={"max_position": json_response['min_position']}, headers=headers)
-                print(pages)
+                # print(tweet_id)
+                last_id = int(tweet_id) - 1
+                request = session.get(url + f'&max_position={last_id}', headers=headers)
+                # print(request.url)
+                # print(pages)
                 pages += -1
             except TypeError:
                 import traceback
